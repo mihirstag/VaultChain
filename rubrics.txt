@@ -1,0 +1,27 @@
+3. Blockchain-Based Identity Verification
+The current identity verification process relies heavily on centralized authorities, posing risks
+of data breaches, identity theft, and privacy infringement. Additionally, the lack of
+interoperability between identity systems complicates cross-border transactions and access
+to services. Thus, there definitely is a pressing need for a decentralized identity verification
+system that utilizes blockchain technology to securely authenticate individuals' identities
+while preserving privacy and reducing reliance on centralized identity providers.
+Scope of Work:
+Here’s a basic idea of what you will be designing to solve this problem statement. Feel free
+to ideate and have add-on features.
+1. Security and privacy preservation being the main objective of this, there is a need to
+ensure integrity and confidentiality of users’ data, through cryptographic techniques and
+algorithms.
+2. A smart contract for identity registration, verification and management.
+3. Individuals register on the blockchain network by creating a digital identity which may
+involve providing personal information such as name, date of birth, and
+government-issued identification documents (tip: you may use college IDs – SRN/PRNs).
+4. In a real-world scenario, identity verification could be done using biometric information.
+Feel free to implement any verification method you may find apt in your case.
+5. Creation of unique identifiers/digital signatures for the users’ data and decentralized
+storage of user data. This identifier is used to authorize the user at any point.
+6. Design of a user-friendly interface.
+
+Ideate, design, find appropriate algorithms and come up with a prototype for this problem
+statement.
+Think about the organizations, firms and individuals who will use this application. Here are a
+few to start with: Banks, government services, e-commerce.
