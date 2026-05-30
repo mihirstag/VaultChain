@@ -1,0 +1,530 @@
+﻿[
+    {
+        "inputs":  [
+
+                   ],
+        "stateMutability":  "nonpayable",
+        "type":  "constructor"
+    },
+    {
+        "anonymous":  false,
+        "inputs":  [
+                       {
+                           "indexed":  true,
+                           "internalType":  "address",
+                           "name":  "user",
+                           "type":  "address"
+                       },
+                       {
+                           "indexed":  true,
+                           "internalType":  "bytes32",
+                           "name":  "purposeHash",
+                           "type":  "bytes32"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "uint256",
+                           "name":  "nonce",
+                           "type":  "uint256"
+                       },
+                       {
+                           "indexed":  true,
+                           "internalType":  "address",
+                           "name":  "verifier",
+                           "type":  "address"
+                       }
+                   ],
+        "name":  "AuthorizationConsumed",
+        "type":  "event"
+    },
+    {
+        "anonymous":  false,
+        "inputs":  [
+                       {
+                           "indexed":  true,
+                           "internalType":  "address",
+                           "name":  "authorizer",
+                           "type":  "address"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "bool",
+                           "name":  "isAuthorized",
+                           "type":  "bool"
+                       }
+                   ],
+        "name":  "AuthorizerUpdated",
+        "type":  "event"
+    },
+    {
+        "anonymous":  false,
+        "inputs":  [
+                       {
+                           "indexed":  true,
+                           "internalType":  "address",
+                           "name":  "user",
+                           "type":  "address"
+                       },
+                       {
+                           "indexed":  true,
+                           "internalType":  "bytes32",
+                           "name":  "identityId",
+                           "type":  "bytes32"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "bytes32",
+                           "name":  "profileHash",
+                           "type":  "bytes32"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "string",
+                           "name":  "metadataURI",
+                           "type":  "string"
+                       }
+                   ],
+        "name":  "IdentityRegistered",
+        "type":  "event"
+    },
+    {
+        "anonymous":  false,
+        "inputs":  [
+                       {
+                           "indexed":  true,
+                           "internalType":  "address",
+                           "name":  "user",
+                           "type":  "address"
+                       }
+                   ],
+        "name":  "IdentityRevoked",
+        "type":  "event"
+    },
+    {
+        "anonymous":  false,
+        "inputs":  [
+                       {
+                           "indexed":  true,
+                           "internalType":  "address",
+                           "name":  "user",
+                           "type":  "address"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "bytes32",
+                           "name":  "newProfileHash",
+                           "type":  "bytes32"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "string",
+                           "name":  "newMetadataURI",
+                           "type":  "string"
+                       }
+                   ],
+        "name":  "IdentityUpdated",
+        "type":  "event"
+    },
+    {
+        "anonymous":  false,
+        "inputs":  [
+                       {
+                           "indexed":  true,
+                           "internalType":  "address",
+                           "name":  "user",
+                           "type":  "address"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "enum IdentityVerification.VerificationStatus",
+                           "name":  "status",
+                           "type":  "uint8"
+                       },
+                       {
+                           "indexed":  false,
+                           "internalType":  "string",
+                           "name":  "reason",
+                           "type":  "string"
+                       },
+                       {
+                           "indexed":  true,
+                           "internalType":  "address",
+                           "name":  "verifier",
+                           "type":  "address"
+                       }
+                   ],
+        "name":  "IdentityVerificationUpdated",
+        "type":  "event"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "address",
+                           "name":  "",
+                           "type":  "address"
+                       }
+                   ],
+        "name":  "authorizers",
+        "outputs":  [
+                        {
+                            "internalType":  "bool",
+                            "name":  "",
+                            "type":  "bool"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function",
+        "constant":  true
+    },
+    {
+        "inputs":  [
+
+                   ],
+        "name":  "contractOwner",
+        "outputs":  [
+                        {
+                            "internalType":  "address",
+                            "name":  "",
+                            "type":  "address"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function",
+        "constant":  true
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "bytes32",
+                           "name":  "",
+                           "type":  "bytes32"
+                       }
+                   ],
+        "name":  "identityOwner",
+        "outputs":  [
+                        {
+                            "internalType":  "address",
+                            "name":  "",
+                            "type":  "address"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function",
+        "constant":  true
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "address",
+                           "name":  "",
+                           "type":  "address"
+                       }
+                   ],
+        "name":  "nonces",
+        "outputs":  [
+                        {
+                            "internalType":  "uint256",
+                            "name":  "",
+                            "type":  "uint256"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function",
+        "constant":  true
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "address",
+                           "name":  "account",
+                           "type":  "address"
+                       },
+                       {
+                           "internalType":  "bool",
+                           "name":  "isAuthorized",
+                           "type":  "bool"
+                       }
+                   ],
+        "name":  "setAuthorizer",
+        "outputs":  [
+
+                    ],
+        "stateMutability":  "nonpayable",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "bytes32",
+                           "name":  "profileHash",
+                           "type":  "bytes32"
+                       },
+                       {
+                           "internalType":  "string",
+                           "name":  "metadataURI",
+                           "type":  "string"
+                       }
+                   ],
+        "name":  "registerIdentity",
+        "outputs":  [
+
+                    ],
+        "stateMutability":  "nonpayable",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "bytes32",
+                           "name":  "newProfileHash",
+                           "type":  "bytes32"
+                       },
+                       {
+                           "internalType":  "string",
+                           "name":  "newMetadataURI",
+                           "type":  "string"
+                       }
+                   ],
+        "name":  "updateIdentity",
+        "outputs":  [
+
+                    ],
+        "stateMutability":  "nonpayable",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "address",
+                           "name":  "user",
+                           "type":  "address"
+                       },
+                       {
+                           "internalType":  "bool",
+                           "name":  "approved",
+                           "type":  "bool"
+                       },
+                       {
+                           "internalType":  "string",
+                           "name":  "reason",
+                           "type":  "string"
+                       }
+                   ],
+        "name":  "reviewIdentity",
+        "outputs":  [
+
+                    ],
+        "stateMutability":  "nonpayable",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+
+                   ],
+        "name":  "revokeOwnIdentity",
+        "outputs":  [
+
+                    ],
+        "stateMutability":  "nonpayable",
+        "type":  "function"
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "address",
+                           "name":  "user",
+                           "type":  "address"
+                       }
+                   ],
+        "name":  "getIdentity",
+        "outputs":  [
+                        {
+                            "internalType":  "bytes32",
+                            "name":  "identityId",
+                            "type":  "bytes32"
+                        },
+                        {
+                            "internalType":  "bytes32",
+                            "name":  "profileHash",
+                            "type":  "bytes32"
+                        },
+                        {
+                            "internalType":  "string",
+                            "name":  "metadataURI",
+                            "type":  "string"
+                        },
+                        {
+                            "internalType":  "enum IdentityVerification.VerificationStatus",
+                            "name":  "status",
+                            "type":  "uint8"
+                        },
+                        {
+                            "internalType":  "uint256",
+                            "name":  "createdAt",
+                            "type":  "uint256"
+                        },
+                        {
+                            "internalType":  "uint256",
+                            "name":  "updatedAt",
+                            "type":  "uint256"
+                        },
+                        {
+                            "internalType":  "bool",
+                            "name":  "exists",
+                            "type":  "bool"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function",
+        "constant":  true
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "address",
+                           "name":  "user",
+                           "type":  "address"
+                       }
+                   ],
+        "name":  "isIdentityVerified",
+        "outputs":  [
+                        {
+                            "internalType":  "bool",
+                            "name":  "",
+                            "type":  "bool"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function",
+        "constant":  true
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "address",
+                           "name":  "user",
+                           "type":  "address"
+                       },
+                       {
+                           "internalType":  "bytes32",
+                           "name":  "purposeHash",
+                           "type":  "bytes32"
+                       },
+                       {
+                           "internalType":  "uint256",
+                           "name":  "nonce",
+                           "type":  "uint256"
+                       },
+                       {
+                           "internalType":  "uint256",
+                           "name":  "deadline",
+                           "type":  "uint256"
+                       }
+                   ],
+        "name":  "buildAuthorizationDigest",
+        "outputs":  [
+                        {
+                            "internalType":  "bytes32",
+                            "name":  "",
+                            "type":  "bytes32"
+                        }
+                    ],
+        "stateMutability":  "pure",
+        "type":  "function",
+        "constant":  true
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "address",
+                           "name":  "user",
+                           "type":  "address"
+                       },
+                       {
+                           "internalType":  "bytes32",
+                           "name":  "purposeHash",
+                           "type":  "bytes32"
+                       },
+                       {
+                           "internalType":  "uint256",
+                           "name":  "nonce",
+                           "type":  "uint256"
+                       },
+                       {
+                           "internalType":  "uint256",
+                           "name":  "deadline",
+                           "type":  "uint256"
+                       },
+                       {
+                           "internalType":  "uint8",
+                           "name":  "v",
+                           "type":  "uint8"
+                       },
+                       {
+                           "internalType":  "bytes32",
+                           "name":  "r",
+                           "type":  "bytes32"
+                       },
+                       {
+                           "internalType":  "bytes32",
+                           "name":  "s",
+                           "type":  "bytes32"
+                       }
+                   ],
+        "name":  "verifyAuthorization",
+        "outputs":  [
+                        {
+                            "internalType":  "bool",
+                            "name":  "",
+                            "type":  "bool"
+                        }
+                    ],
+        "stateMutability":  "view",
+        "type":  "function",
+        "constant":  true
+    },
+    {
+        "inputs":  [
+                       {
+                           "internalType":  "address",
+                           "name":  "user",
+                           "type":  "address"
+                       },
+                       {
+                           "internalType":  "bytes32",
+                           "name":  "purposeHash",
+                           "type":  "bytes32"
+                       },
+                       {
+                           "internalType":  "uint256",
+                           "name":  "deadline",
+                           "type":  "uint256"
+                       },
+                       {
+                           "internalType":  "uint8",
+                           "name":  "v",
+                           "type":  "uint8"
+                       },
+                       {
+                           "internalType":  "bytes32",
+                           "name":  "r",
+                           "type":  "bytes32"
+                       },
+                       {
+                           "internalType":  "bytes32",
+                           "name":  "s",
+                           "type":  "bytes32"
+                       }
+                   ],
+        "name":  "consumeAuthorization",
+        "outputs":  [
+                        {
+                            "internalType":  "bool",
+                            "name":  "",
+                            "type":  "bool"
+                        }
+                    ],
+        "stateMutability":  "nonpayable",
+        "type":  "function"
+    }
+]
